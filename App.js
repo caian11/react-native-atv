@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EspelhoDeTextoView from "./EspelhoTextoView";
 import CalculadoraSomaView from "./Calculadora";
+import FormCadastro from "./Pessoa";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,10 @@ function Home({ navigation }) {
                     title="Abrir Calculadora de Soma"
                     onPress={() => navigation.navigate('Calculadora')}
                 />
+                <Button
+                    title="Abrir Form de Pessoa"
+                    onPress={() => navigation.navigate('Pessoa')}
+                />
             </View>
 
             <StatusBar style="light" />
@@ -37,6 +42,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="EspelhoTexto" component={EspelhoDeTextoView} />
                 <Stack.Screen name="Calculadora" component={CalculadoraSomaView} />
+                <Stack.Screen name="Pessoa" component={FormCadastro} />
             </Stack.Navigator>
         </NavigationContainer>
     );
